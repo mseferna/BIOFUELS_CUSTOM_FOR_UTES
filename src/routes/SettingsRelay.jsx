@@ -24,7 +24,7 @@ function SettingsRelay() {
 	}, [])
 
 	const testRelay = (state) => {
-		fetch(`http://l${window.location.hostname}:${import.meta.env.VITE_API_PORT}/relay/${state}/`, {method: 'GET'})
+		fetch(`http://${window.location.hostname}:${import.meta.env.VITE_API_PORT}/relay/${state}/`, {method: 'GET'})
 			.then(res => res.json())
 			.then(response => setApiResponse(response) && alert(`Relay is ${state} - Response: ${apiResponse.response}`))
 			.finally(() => alert(`Relay is ${state} - Response: ${apiResponse.response}`))
